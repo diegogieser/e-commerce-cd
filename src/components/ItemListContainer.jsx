@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export const ItemListContainer = () => {
+
+const ItemListContainer = (props) => {
   return (
-    <div>
-        <h1>HOLA</h1>
-        
-        </div>
-  )
-}
+    <div className="item-list-container">
+      <h2>Homepage</h2>
+      <p>{props.message}</p>
+    </div>
+  );
+};
+
+export default ItemListContainer;
