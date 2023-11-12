@@ -6,6 +6,7 @@ function Button({ color, label, onClickCallback }) {
   const handleClick = () => {
     if (backgroundColor === color) {
       // Cambiar el color de fondo a blanco (o cualquier otro valor predeterminado) cuando se hace clic nuevamente
+      // Cambiar el color de fondo a blanco (o cualquier otro valor predeterminado) cuando se hace clic nuevamente
       setBackgroundColor('white');      
     } else {
       // Restaurar el color original
