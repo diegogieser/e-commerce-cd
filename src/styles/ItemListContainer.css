@@ -5,44 +5,10 @@
   color: #fff;
   padding: 20px;
   border-radius: 10px;
-  margin: 20px 0;
- 
-  height: 100%; /* Ocupa toda la altura de la pantalla */
-  overflow: auto; /* Añade un desplazamiento si el contenido es más grande que la pantalla */
+  margin: 10px 0; 
+  height: 70vh;  
+  overflow: auto; 
 }
   
-  .card-container {
-    display: flex;
-    gap: 20px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
   
-  .card {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-  }
-  
-  .card img {
-    width: 100%;
-    border-radius: 5px;
-  }
-  
-  .card button {
-    background-color: #cf0808;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .card button:hover {
-    background-color: #389b4f;
-  }
   
