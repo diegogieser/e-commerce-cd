@@ -1,7 +1,30 @@
+
+
 .cart-widget {
-    background-color: #555;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.cart-text {
+  flex-grow: 1;
+}
+
+/* Cambia el color del botón y agranda al pasar el mouse */
+.cart-widget:hover {
+  background-color: #4CAF50; /* Verde */
+}
+
+.cart-widget:hover .cart-text {
+  color: #fff;
+}

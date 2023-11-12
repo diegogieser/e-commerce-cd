@@ -1,0 +1,40 @@
+
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  flex: 1;
+}
+
+.footer-section p {
+  margin: 5px 0;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.icon-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 16px;
+}
+
+
