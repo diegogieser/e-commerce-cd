@@ -1,57 +1,72 @@
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
-    border-radius: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-  }
-  
-  .navbar h1 {
-    margin: 0;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .nav-links button {
-    background: none;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px; 
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: #fff;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #555;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: linear-gradient(to right, #000000, #ffd700); 
+  color: #fff; 
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+  margin-right: 10px;
+}
+
+h1 {
+  margin: 0; 
+  font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  margin-right: 10px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+/* Estilos para el botón desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

@@ -1,13 +1,13 @@
 
-
 .cart-widget {
-  background-color: #555;
+  background: linear-gradient(to right, #000000, #ffd700); /* Degradado de negro a dorado */
   color: #fff;
   padding: 10px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 
 .cart-icon {
@@ -22,9 +22,30 @@
 
 /* Cambia el color del botón y agranda al pasar el mouse */
 .cart-widget:hover {
-  background-color: #4CAF50; /* Verde */
+  background: linear-gradient(to right, #006400, #4CAF50); /* Degradado de verde oscuro a verde */
 }
 
 .cart-widget:hover .cart-text {
   color: #fff;
+}
+
+.cart-notification {
+  background-color: #ff5733; /* Color inicial del fondo del contador */
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 5px; /* Ajusta según sea necesario */
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-origin: center;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cart-widget:hover .cart-notification {
+  background-color: #ff8c00; /* Color al pasar el mouse sobre el widget */
+  transform: scale(1.2); /* Escala al pasar el mouse sobre el widget */
 }

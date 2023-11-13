@@ -1,11 +1,11 @@
 import React from 'react';
 import CartWidget from '../CartWidget/CartWidget';
-import Logo from '../../assets/logo.jfif';
+import Logo from '../../assets/Logo2.png';
 
 const NavBar = () => {
   return (
     <div className="navbar">
-      <img src={Logo} alt="Logo de OuRouge" className="logo" />  {/* Agrega la etiqueta img para el logo */}
+      <img src={Logo} alt="Logo de OuRouge" className="logo" />
       <h1>Fragancias OuRouge</h1>
       <div className="nav-links">
         <button>Inicio</button>
@@ -25,3 +25,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
