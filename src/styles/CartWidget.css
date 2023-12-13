@@ -22,7 +22,7 @@
 
 /* Cambia el color del botón y agranda al pasar el mouse */
 .cart-widget:hover {
-  background: linear-gradient(to right, #006400, #4CAF50); /* Degradado de verde oscuro a verde */
+  background: linear-gradient(to right, #006400, #4CAF50); /* Degradado  */
 }
 
 .cart-widget:hover .cart-text {

@@ -1,0 +1,30 @@
+.item-count {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .count-button {
+    background: linear-gradient(to right, #ffd700, #ffaf00);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 10%;
+  }
+  
+  .count-button:hover {
+    background: linear-gradient(to right, #ffd700, #ff8c00);
+  }
+  
+  .quantity {
+    font-size: 1.2em;
+    margin: 0 10px;
+  }
+  

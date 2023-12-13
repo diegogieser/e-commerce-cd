@@ -1,3 +1,4 @@
+/* Estilos para el componente navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -5,6 +6,11 @@
   padding: 10px;
   background: linear-gradient(to right, #000000, #ffd700); 
   color: #fff; 
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -15,7 +21,7 @@
 
 h1 {
   margin: 0; 
-  font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+  font-size: 24px;
 }
 
 .nav-links {
@@ -23,13 +29,14 @@ h1 {
   align-items: center;
 }
 
-button {
-  margin-right: 10px;
+/* Estilos para los botones */
+button, .dropbtn {
   background-color: transparent;
   color: #fff;
   border: none;
   cursor: pointer;
-  font-size: 18px; /* Ajusta el tamaño de la fuente según sea necesario */
+  font-size: 18px;
+  margin-right: 10px;
 }
 
 /* Estilos para el botón desplegable */
@@ -38,21 +45,17 @@ button {
   display: inline-block;
 }
 
-.dropbtn {
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 18px; /* Ajusta el tamaño de la fuente según sea necesario */
-}
-
 .dropdown-content {
   display: none;
+  max-height: 0;
+  overflow: hidden;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #333333;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  transition: max-height 0.3s ease, border-radius 0.3s ease; 
+  border-radius: 0 0 8px 8px; 
 }
 
 .dropdown-content a {
@@ -60,13 +63,32 @@ button {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  font-size: 16px; /* Ajusta el tamaño de la fuente según sea necesario */
+  font-size: 16px;
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #2b2828;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+  max-height: 200px; 
+  border-radius: 8px 8px 0 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: normal;
+  transition: font-weight 0.3s;
+}
+
+.nav-links a:hover {
+  font-weight: bold;
+}
+
+.nav-links a:active {
+  font-weight: bold;
+  color: #ffd700; 
 }

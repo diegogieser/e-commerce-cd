@@ -1,13 +1,9 @@
-
-
 import React from 'react';
-
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-content">
-      
+      <div className="footer-content">      
         <div className="footer-bottom">
           <p><strong>Email:</strong> info@ourouge.com</p>
         </div>
@@ -16,11 +12,8 @@ const Footer = () => {
       </div>
         <div className="footer-bottom">
           <p><strong>Acerca de Nosotros | Términos y Condiciones</strong></p>
-        </div>
-        
-      </div>
-      
-      
+        </div>        
+      </div>      
     </footer>
   );
 };
