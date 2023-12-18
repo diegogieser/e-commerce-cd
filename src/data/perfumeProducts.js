@@ -85,6 +85,36 @@ const perfumeProducts = [
 
     },
   ];
+
+  export const fetchProductList = () => {
+    return new Promise((res) => {
+      setTimeout(() => {
+        res(perfumeProducts);
+      }, 1000); //retardo
+    });
+  };
+
+  export const fetchProductById = (id) => {
+    return new Promise((res) => {
+      setTimeout(() => {
+        const productFilter = perfumeProducts.find(
+          (prod) => prod.id === parseInt(id)
+        );
+        res(productFilter);
+      }, 1000);
+    });
+  };
+
+  export const fetchProductByCategory = (category) => {
+    return new Promise((res) => {
+      setTimeout(() => {
+        const productFilter = perfumeProducts.filter(
+          (prod) => prod.categoria === category
+        );
+        res(productFilter);
+      }, 1000);
+    });
+  };
   
   export default perfumeProducts;
   

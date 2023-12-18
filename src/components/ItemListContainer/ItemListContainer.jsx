@@ -1,48 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Link, useParams } from 'react-router-dom';
 
-const ItemListContainer = ({ products }) => {
+import { Link, useParams } from 'react-router-dom';
+import ItemList from '../ItemList/ItemList';
+import perfumeProducts, {fetchProductList, fetchProductByCategory} from '../../data/perfumeProducts';
+
+const ItemListContainer = () => {
   const { categoria } = useParams();
   const [titulo, setTitulo] = useState('Bienvenidos a nuestra tienda online');
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
 
-  // Efecto para cambiar el título cuando cambia la categoría
+  
   useEffect(() => {
-    if (categoria) {
-      setTitulo(`Productos de la categoría: ${categoria}`);
-    } else {
-      setTitulo('Productos destacados');
+    setLoading(true)
+    if(categoria) {
+        fetchProductByCategory(categoria)
+            .then((prod) => setProducts(prod))
+            .catch((err) => console.log(err))
+            .finally(()=> setLoading(false))
+    }else{
+        fetchProductList()
+        .then((prod) => {
+            setProducts(prod)
+        })
+        .catch((err) => console.log(err))
+        .finally(()=> {
+            setLoading(false)})
+
     }
-  }, [categoria]);
+}, [categoria])
 
-
-  // Filtra los productos según la categoría (o muestra todos si no hay categoría)
-  const filteredProducts = categoria
-    ? products.filter((product) => product.categoria === categoria)
-    : products;
+console.log(products)
 
   return (
-    <div className="item-list-container">      
+    <div className="item-list-container">
       <h2>{titulo}</h2>
-      <div className="card-container">
-        {filteredProducts.map((product) => (
-          <div key={product.id} className="card">
-            <img src={product.imagen} alt={product.nombre} />
-            <h3>{product.nombre}</h3>
-            <p>{product.descripcion}</p>
-            <p>Precio: ${product.precio}</p>
-            <p>Categoría: {product.categoria}</p>
-            <Link to={`/item/${product.id}`}>Ver detalles</Link>
-          </div>
-        ))}
-      </div>
+      {loading ? (
+        <p>Cargando productos...</p>
+      ) : (
+        <ItemList products={products} />
+      )}
     </div>
   );
 };
 
-ItemListContainer.propTypes = {
-  
-  products: PropTypes.array.isRequired,
-};
+
 
 export default ItemListContainer;

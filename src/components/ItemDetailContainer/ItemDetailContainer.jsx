@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { FaSpinner } from 'react-icons/fa'; // Importa el ícono de spinner
+import perfumeProducts, {fetchProductById} from '../../data/perfumeProducts';
 
-const ItemDetailContainer = ({ products }) => {
+const ItemDetailContainer = () => {
   const { id } = useParams();
-  const product = products.find((p) => p.id.toString() === id);  
-
-  // Estado para manejar la cantidad seleccionada
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const productDetails = await fetchProductById(id);
+        setProduct(productDetails);
+      } catch (error) {
+        console.error('Error al cargar los detalles del producto', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [id]);
 
   // Handle para actualizar la cantidad
   const handleQuantityChange = (newQuantity) => {
@@ -18,23 +35,22 @@ const ItemDetailContainer = ({ products }) => {
     <div className="item-detail-container">
       <div className='card-container'>
         <div className='card'>
-          {product ? (
-            <>
-              <img src={product.imagen} alt={product.nombre} />
-              <h2>{product.nombre}</h2>
-              <p>{product.descripcion}</p>
-              <p>Precio: ${product.precio}</p>
-              <p>Categoria: {product.categoria}</p>
-              
-              {/* Agrega el componente ItemCount */}
-              <ItemCount 
-                stock={10}  
-                initial={1}  
-                onQuantityChange={handleQuantityChange}  // actualización de la cantdad
-              />
-            </>
+          {loading ? (
+            <div className="spinner-container">
+              <FaSpinner className="spinner" />
+              <p>Cargando detalles del producto...</p>
+            </div>
           ) : (
-            <p>Producto no encontrado</p>
+            <>
+              {product ? (
+                <ItemDetail
+                  product={product}
+                  onQuantityChange={handleQuantityChange}
+                />
+              ) : (
+                <p>Producto no encontrado</p>
+              )}
+            </>
           )}
         </div>
       </div>

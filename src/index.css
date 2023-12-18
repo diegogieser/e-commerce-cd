@@ -2,6 +2,10 @@
 @import '../src/styles/NavBar.css';
 @import '../src/styles/CartWidget.css';
 @import '../src/styles/ItemListContainer.css';
+@import '../src/styles/ItemList.css';
+@import '../src/styles/Item.css';
+@import '../src/styles/ItemDetailContainer.css';
+@import '../src/styles/ItemDetail.css';
 @import './App.css';
 @import '../src/styles/Fotter.css';
 @import '../src/styles/ItemCount.css';
