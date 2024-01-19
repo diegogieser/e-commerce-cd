@@ -1,4 +1,4 @@
-const perfumeProducts = [
+export const perfumeProducts = [
     {
       id: 1,
       categoria: 'Mujer',
